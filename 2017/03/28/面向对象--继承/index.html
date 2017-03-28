@@ -6,14 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/3 | rex博客</title>
+  <title>rex博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="什么是继承1.继承就是在原有的对象上，略作修改，得到一个新的对象。
+2.不影响原有对象的功.
+如何添加继承使用call 方法：
+call 方法是 用来继承属性的。
+继承方法就不能用call 了，要用 for in。
+cal方法是为了改变this的指向。
+creatShow这样调用，所以this指向是window，所以使用call把this指向改为creatShow。
+123function cre">
+<meta property="og:type" content="article">
 <meta property="og:title" content="rex博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/03/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/28/面向对象--继承/index.html">
 <meta property="og:site_name" content="rex博客">
+<meta property="og:description" content="什么是继承1.继承就是在原有的对象上，略作修改，得到一个新的对象。
+2.不影响原有对象的功.
+如何添加继承使用call 方法：
+call 方法是 用来继承属性的。
+继承方法就不能用call 了，要用 for in。
+cal方法是为了改变this的指向。
+creatShow这样调用，所以this指向是window，所以使用call把this指向改为creatShow。
+123function cre">
+<meta property="og:updated_time" content="2017-03-24T10:46:51.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rex博客">
+<meta name="twitter:description" content="什么是继承1.继承就是在原有的对象上，略作修改，得到一个新的对象。
+2.不影响原有对象的功.
+如何添加继承使用call 方法：
+call 方法是 用来继承属性的。
+继承方法就不能用call 了，要用 for in。
+cal方法是为了改变this的指向。
+creatShow这样调用，所以this指向是window，所以使用call把this指向改为creatShow。
+123function cre">
   
     <link rel="alternative" href="/atom.xml" title="rex博客" type="application/atom+xml">
   
@@ -153,217 +178,146 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-面向对象--继承" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是继承"><a href="#什么是继承" class="headerlink" title="什么是继承"></a>什么是继承</h1><p>1.继承就是在原有的对象上，略作修改，得到一个新的对象。</p>
+<p>2.不影响原有对象的功.</p>
+<h3 id="如何添加继承"><a href="#如何添加继承" class="headerlink" title="如何添加继承"></a>如何添加继承</h3><p>使用call 方法：</p>
+<p>call 方法是 用来继承属性的。</p>
+<p>继承方法就不能用call 了，要用 for in。</p>
+<p>cal方法是为了改变this的指向。</p>
+<p>creatShow这样调用，所以this指向是window，所以使用call把this指向改为creatShow。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatStar</span>(<span class="params">name,sex,job</span>)</span>&#123;</div><div class="line">    creatShow.call(<span class="keyword">this</span>,name,sex);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="不支持使用的继承方式："><a href="#不支持使用的继承方式：" class="headerlink" title="不支持使用的继承方式："></a>不支持使用的继承方式：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">creatShow.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  </div><div class="line">&#125;;</div><div class="line"></div><div class="line">creatStar.prototype = creatShow.prototype;</div><div class="line"><span class="comment">//这样写会改变原有对象的功能。这个时候往 creatStar 添加对象的时候，也会给 creatShow 添加同样的对象</span></div></pre></td></tr></table></figure>
+<h1 id="面向对象的-拷贝继承"><a href="#面向对象的-拷贝继承" class="headerlink" title="面向对象的 拷贝继承"></a>面向对象的 拷贝继承</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//拷贝继承原理：就是使用 基本类型的 赋值，基本类型赋值就不会互相影响了。</span></div><div class="line"><span class="comment">//比如：</span></div><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">       <span class="attr">name</span> : <span class="string">"rex"</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> b;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">atend</span>(<span class="params">obj1,obj2</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> a )&#123;</div><div class="line">    obj1[attr] = obj2[attr];</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//这个就是把对象下面的属性给 复制 到另外一个对象中去，这样就不会互相影响</span></div><div class="line"></div><div class="line">attend(creatStar,creatShow);</div></pre></td></tr></table></figure>
+<h2 id="继承的其他方式"><a href="#继承的其他方式" class="headerlink" title="继承的其他方式"></a>继承的其他方式</h2><h4 id="类式继承"><a href="#类式继承" class="headerlink" title="类式继承"></a>类式继承</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//利用构造函数（类）的方式继承</span></div><div class="line"><span class="comment">//父类</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Aaa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">"rex"</span></div><div class="line">&#125;</div><div class="line">Aaa.prototype.showName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//子类</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bbb</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   Aaa.call(<span class="keyword">this</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//子类对象要怎么 拥有 父类 上的方法呢？</span></div><div class="line"></div><div class="line"><span class="comment">//第二个要加的代码</span></div><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line">f.prototype = Aaa.prototype;</div><div class="line"></div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------</span></div><div class="line"></div><div class="line">Bbb.prototype = <span class="keyword">new</span> f(); <span class="comment">//这句 代码 就是 类式继承。。但是会有很多问题</span></div><div class="line"></div><div class="line"><span class="comment">//1.导致 constructor 的指向变了，变成了 Aaa；所以要加一句代码：</span></div><div class="line">Bbb.prototype.constructor = Bbb;<span class="comment">// 修正指向问题</span></div><div class="line"></div><div class="line"><span class="comment">//这样的方式就是，只继承方法，不继承属性，当b1修改属性的时候，不会影响到父类的属性，属性的继承还是用  call  去继承</span></div><div class="line"></div><div class="line"><span class="comment">//创建一个子类对象</span></div><div class="line"><span class="keyword">var</span> b1 = <span class="keyword">new</span> Bbb();</div></pre></td></tr></table></figure>
+<h4 id="继承方式—原型继承"><a href="#继承方式—原型继承" class="headerlink" title="继承方式—原型继承"></a>继承方式—原型继承</h4><h6 id="借助原型来完成继承"><a href="#借助原型来完成继承" class="headerlink" title="借助原型来完成继承"></a>借助原型来完成继承</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">   <span class="attr">name</span> : <span class="string">"小明"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> b = cloneObj(a);</div><div class="line"></div><div class="line">alert(b.name);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneObj</span> (<span class="params">obj</span>)</span>&#123;</div><div class="line">  </div><div class="line">   <span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">  </div><div class="line">   f.prototype = obj;</div><div class="line">  </div><div class="line">   <span class="keyword">return</span> <span class="keyword">new</span> f();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>1.拷贝继承： 有new 和 无 new 的时候 都适用。</p>
+<p>2.类式继承： 适用与  有 new  的时候。</p>
+<p>3.原型继承： 适用于  无 new  的时候。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢老板<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/运算符/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.966Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/28/面向对象--继承/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/数组/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.950Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/类和对象/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2017/03/28/跨域的解决方式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/28/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">rex</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/常量/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.919Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/PHP-函数/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.904Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/PHP-变量/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/跨域的解决方式/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:23.937Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/面向对象--继承/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:23.921Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/test/" class="archive-article-date">
-  	<time datetime="2017-03-28T07:16:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/28/test/">rex</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -386,8 +340,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

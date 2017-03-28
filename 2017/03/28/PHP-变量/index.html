@@ -6,14 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/3 | rex博客</title>
+  <title>rex博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="php–变量1、一般情况下一个变量只能装一个（不要太贪心）值。
+2、当我们放进去一个苹果后，再放进榴莲的时候，苹果就被替换掉，再放   入香蕉，那么榴莲就被替换了。
+1234567&amp;lt;?php    $var = &quot;大家来学PHP&quot;;    echo $var;	echo &quot;&amp;lt;br /&amp;gt;&quot;;	$var = &quot;学PHP上慕课网&quot;;	echo $var;?&amp;gt;
+如何定义变量概念：定">
+<meta property="og:type" content="article">
 <meta property="og:title" content="rex博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/03/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/28/PHP-变量/index.html">
 <meta property="og:site_name" content="rex博客">
+<meta property="og:description" content="php–变量1、一般情况下一个变量只能装一个（不要太贪心）值。
+2、当我们放进去一个苹果后，再放进榴莲的时候，苹果就被替换掉，再放   入香蕉，那么榴莲就被替换了。
+1234567&amp;lt;?php    $var = &quot;大家来学PHP&quot;;    echo $var;	echo &quot;&amp;lt;br /&amp;gt;&quot;;	$var = &quot;学PHP上慕课网&quot;;	echo $var;?&amp;gt;
+如何定义变量概念：定">
+<meta property="og:updated_time" content="2017-03-26T11:25:48.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rex博客">
+<meta name="twitter:description" content="php–变量1、一般情况下一个变量只能装一个（不要太贪心）值。
+2、当我们放进去一个苹果后，再放进榴莲的时候，苹果就被替换掉，再放   入香蕉，那么榴莲就被替换了。
+1234567&amp;lt;?php    $var = &quot;大家来学PHP&quot;;    echo $var;	echo &quot;&amp;lt;br /&amp;gt;&quot;;	$var = &quot;学PHP上慕课网&quot;;	echo $var;?&amp;gt;
+如何定义变量概念：定">
   
     <link rel="alternative" href="/atom.xml" title="rex博客" type="application/atom+xml">
   
@@ -153,217 +166,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-PHP-变量" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="php–变量"><a href="#php–变量" class="headerlink" title="php–变量"></a>php–变量</h1><p>1、一般情况下一个变量只能装一个（不要太贪心）值。</p>
+<p>2、当我们放进去一个苹果后，再放进榴莲的时候，苹果就被替换掉，再放   入香蕉，那么榴莲就被替换了。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    $var = <span class="string">"大家来学PHP"</span>;</div><div class="line">    <span class="keyword">echo</span> $var;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</div><div class="line">	$var = <span class="string">"学PHP上慕课网"</span>;</div><div class="line">	<span class="keyword">echo</span> $var;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="如何定义变量"><a href="#如何定义变量" class="headerlink" title="如何定义变量"></a>如何定义变量</h4><p>概念：定义变量就是向服务器的内存（服务器的内存，我们可以当做一个大仓库）申请空间（我们可以理解为一个子仓库），用来存储数据。</p>
+<p>1、变量名前面 必须 用 $ 来标识。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> </div><div class="line">$var_name = <span class="string">"苹果"</span>;</div><div class="line">$n = <span class="number">10</span>;</div><div class="line">var_dump($var_name);</div><div class="line">var_dump($n);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="变量名的命名规则"><a href="#变量名的命名规则" class="headerlink" title="变量名的命名规则"></a>变量名的命名规则</h4><p>1、变量名必须以<strong>字母</strong>或<strong>下划线</strong> “<strong>_</strong>”开头，不可以用  数字 开头。</p>
+<p>2、变量名不允许包含空格，当变量名由多个单词组成，建议使用“_”，或者用驼峰命名法。</p>
+<p>3、在PHP中变量名是区分大小写的。</p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>string ：字符串类型;</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> </div><div class="line">$love = <span class="string">"I love you!"</span>; </div><div class="line">$string1 = <span class="string">"慕课网，$love"</span>;</div><div class="line">$string2 = <span class="string">'慕课网，$love'</span>;</div><div class="line"><span class="keyword">echo</span> $string1;</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</div><div class="line"><span class="keyword">echo</span> $string2;</div><div class="line"><span class="comment">//当双引号中包含变量时，变量会与双引号中的内容连接在一起；</span></div><div class="line"><span class="comment">//当单引号中包含变量时，变量会被当做字符串输出。</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>当字符串很长的时候怎么办？</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> </div><div class="line"><span class="comment">//我们可以使用Heredoc结构形式的方法来解决该问题，首先使用定界符表示</span></div><div class="line"><span class="comment">//字符串（&lt;&lt;&lt;），接着在“&lt;&lt;&lt;“之后提供一个标识符GOD，然后是字符串最</span></div><div class="line"><span class="comment">//后以提供的这个标识符结束字符串。   </span></div><div class="line">$string1 = <span class="string">&lt;&lt;&lt;GOD</span></div><div class="line">我有一只小毛驴，我从来也不骑。</div><div class="line">有一天我心血来潮，骑着去赶集。</div><div class="line">我手里拿着小皮鞭，我心里正得意。</div><div class="line">不知怎么哗啦啦啦啦，我摔了一身泥.</div><div class="line">GOD;</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $string1;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>boolean : 只有2个值，TRUE   FALSE，不区分大小写。echo”指令输出布尔 类型时，如果是“true”则输出的是“1”，“false”则什么也不输出。</p>
+<h4 id="整型："><a href="#整型：" class="headerlink" title="整型："></a>整型：</h4><p>类似于常见的整数。它可以用十进制、八进制、十六进制指定。</p>
+<p>十进制就是日常使用的数字；</p>
+<p>八进制，数字前必须加上“0”(这个0是阿拉伯数字0，可不是英文字)；</p>
+<p>十六进制，数字前必须加“0x” (这个0也是阿拉伯数字0)。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$data_int1 = <span class="number">123</span>;</div><div class="line"><span class="keyword">echo</span> $data_int1;</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</div><div class="line">$data_int2 = <span class="number">-123</span>;</div><div class="line"><span class="keyword">echo</span> $data_int2;</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</div><div class="line">$data_int3 = <span class="number">0123</span>;</div><div class="line"><span class="keyword">echo</span> $data_int3;</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</div><div class="line">$data_int4 = <span class="number">0x123</span>;</div><div class="line"><span class="keyword">echo</span> $data_int4;</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h4><p>浮点型（浮点数、双精度数或实数），也就是通常说的小数，可以用小数点或者科学计数法表示。科学计数法可以使用小写的e，也可以使用大写的E。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$num_float = <span class="number">1.234</span>;    <span class="comment">//小数点  </span></div><div class="line">$num_float = <span class="number">1.2e3</span>;    <span class="comment">//科学计数法，小写e  </span></div><div class="line">$num_float = <span class="number">7.0E-10</span>;     <span class="comment">//科学计数法，大写E  </span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="第一种特殊类型—资源"><a href="#第一种特殊类型—资源" class="headerlink" title="第一种特殊类型—资源"></a>第一种特殊类型—资源</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">资源：</div><div class="line">资源是由专门的函数来建立和使用的，例如打开文件、数据连接、图形画布。</div><div class="line">我们可以对资源进行操作（创建、使用和释放）。</div><div class="line">任何资源，在不需要的时候应该被及时释放。</div><div class="line">如果我们忘记了释放资源，系统自动启用垃圾回收机制，在页面执行完毕后回收资源，以避免内存被消耗殆尽。</div></pre></td></tr></table></figure>
+<p>举个例子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> </div><div class="line">  $file = fopen(<span class="string">"f.txt"</span>,<span class="string">"r"</span>)  <span class="comment">//打开文件</span></div><div class="line">  $con = mysql_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"root"</span>);<span class="comment">//连接数据库</span></div><div class="line">  $img = imagecreate(<span class="number">100</span>,<span class="number">100</span>);<span class="comment">//图形画布</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>假设在服务器上，发现一个文件，用php可以查看：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> </div><div class="line"><span class="comment">//首先采用“fopen”函数打开文件，得到返回值的就是资源类型。</span></div><div class="line">$file_handle = fopen(<span class="string">"/data/webroot/resource/php/f.txt"</span>,<span class="string">"r"</span>);</div><div class="line"><span class="keyword">if</span> ($file_handle)&#123;</div><div class="line">    <span class="comment">//接着采用while循环（后面语言结构语句中的循环结构会详细介绍）一行行地读取文件，然后输出每行的文字</span></div><div class="line">    <span class="keyword">while</span> (!feof($file_handle)) &#123; <span class="comment">//判断是否到最后一行</span></div><div class="line">        $line = fgets($file_handle); <span class="comment">//读取一行文本</span></div><div class="line">        <span class="keyword">echo</span> $line; <span class="comment">//输出一行文本</span></div><div class="line">        <span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>; <span class="comment">//换行</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">fclose($file_handle);<span class="comment">//关闭文件</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="第二种特殊类型—空类型"><a href="#第二种特殊类型—空类型" class="headerlink" title="第二种特殊类型—空类型"></a>第二种特殊类型—空类型</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NULL（NULL）：NULL是空类型，对大小写不敏感，NULL类型只有一个取值，表示一个变量没有值，当被赋值为NULL，或者尚未被赋值，或者被unset()，这三种情况下变量被认为为NULL。</div></pre></td></tr></table></figure>
+<p>例子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> </div><div class="line"> error_reporting(<span class="number">0</span>); <span class="comment">//禁止显示PHP警告提示</span></div><div class="line"> $var;</div><div class="line"> var_dump($var);</div><div class="line"> $var1 = <span class="keyword">null</span>;</div><div class="line"> var_dump($var1);</div><div class="line"> $var2 = <span class="keyword">NULL</span>;</div><div class="line"> var_dump( $var2);</div><div class="line"> $var3 = <span class="string">"节日快乐！"</span>;</div><div class="line"> <span class="keyword">unset</span>($var3);  <span class="comment">//将变量 $var3 ，注销定义</span></div><div class="line"> var_dump($var3);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢老板<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/运算符/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.966Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/28/PHP-变量/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/数组/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.950Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/类和对象/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2017/03/28/PHP-函数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/28/跨域的解决方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/常量/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.919Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/PHP-函数/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.904Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/PHP-变量/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:34.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/跨域的解决方式/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:23.937Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/面向对象--继承/" class="archive-article-date">
-  	<time datetime="2017-03-28T09:11:23.921Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/test/" class="archive-article-date">
-  	<time datetime="2017-03-28T07:16:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/28/test/">rex</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -386,8 +342,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
