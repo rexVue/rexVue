@@ -161,6 +161,161 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-PHP会话控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/29/PHP会话控制/">PHP会话控制</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/29/PHP会话控制/" class="archive-article-date">
+  	<time datetime="2017-03-29T08:10:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><ul>
+<li>Cookie是存储在客户端浏览器中的数据，我们通过Cookie来跟踪与存储用户数据.</li>
+<li>Cookie通过HTTP headers从服务端返回到客户端。</li>
+<li>因为Cookie是存在于HTTP的标头之中，所以必须在其他信息输出以前进行设置，类似于header函数的使用限制。</li>
+</ul>
+<h5 id="php-操作cookie"><a href="#php-操作cookie" class="headerlink" title="php 操作cookie"></a>php 操作cookie</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">   <span class="comment">//通过setcookie函数进行Cookie的设置。</span></div><div class="line">  <span class="comment">//任何从浏览器发回的Cookie，PHP都会自动的将他存储在$_COOKIE的全局变量之中。</span></div><div class="line">  <span class="comment">//因此我们可以通过$_COOKIE['key']的形式来读取某个Cookie值。  </span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="php的使用"><a href="#php的使用" class="headerlink" title="php的使用"></a>php的使用</h5><ul>
+<li>存储用户的登录信息，购物车等。</li>
+<li>使用回话 Session时通常使用cookie来存储会话id来识别用户</li>
+<li>cookie具备有效期，当有效期结束，cookie会自动从客户端删除</li>
+<li>为了安全控制，cookie还可以设置 域  和 路径</li>
+</ul>
+<h5 id="设置cookie"><a href="#设置cookie" class="headerlink" title="设置cookie"></a>设置cookie</h5><ul>
+<li>setcookie()。有7个可选参数，最常用的的是前5个。</li>
+<li>name（cookie名），可以通过 $_COOKIE[‘name’]进行访问。</li>
+<li>value （cookie的值）</li>
+<li>expire （过期时间）Unix时间戳格式，默认为0，表示浏览器关闭即失效。</li>
+<li>path（有效路径）如果路径设置为‘/’，则整个网站都有效。</li>
+<li>domain（有效域）默认整个域名有效，如果设置了 ‘www.imooc.com’,则只在www子域中有效</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$value = <span class="string">'test'</span>;</div><div class="line">setcookie(<span class="string">"TestCookie"</span>, $value);</div><div class="line"></div><div class="line">setcookie(<span class="string">"TestCookie"</span>, $value, time()+<span class="number">3600</span>);  <span class="comment">//有效期一小时</span></div><div class="line"></div><div class="line">setcookie(<span class="string">"TestCookie"</span>, $value, time()+<span class="number">3600</span>, <span class="string">"/path/"</span>, <span class="string">"imooc.com"</span>); <span class="comment">//设置路径与域</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。"><a href="#因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。" class="headerlink" title="因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。"></a>因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">   header(<span class="string">"Set-Cookie:cookie_name=value"</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="cookie的删除与过期时间"><a href="#cookie的删除与过期时间" class="headerlink" title="cookie的删除与过期时间"></a>cookie的删除与过期时间</h5><ul>
+<li>php 中没有删除cookie的函数，所以也是用setcookie（）来做。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">   setcookie(<span class="string">'test'</span>, <span class="string">''</span>, time()<span class="number">-1</span>); </div><div class="line"></div><div class="line"> <span class="comment">//可以看到将cookie的过期时间设置到当前时间之前，则该cookie会自动失效，也就达到了删除cookie的目的。</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="直接通过header来删除cookie。"><a href="#直接通过header来删除cookie。" class="headerlink" title="直接通过header来删除cookie。"></a>直接通过header来删除cookie。</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">   header(<span class="string">"Set-Cookie:test=1393832059; expires="</span>.gmdate(<span class="string">'D, d M Y H:i:s \G\M\T'</span>, time()<span class="number">-1</span>));</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="有效路径"><a href="#有效路径" class="headerlink" title="有效路径"></a>有效路径</h5><ul>
+<li>路径用来控制设置cookie在哪个路径在有效，默认为 ‘/‘ ，当设定了其他路径之后，则只在设定的路径和子路径有效。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">   setcookie(<span class="string">'test'</span>, time(), <span class="number">0</span>, <span class="string">'/path'</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="使用session"><a href="#使用session" class="headerlink" title="使用session"></a>使用session</h5><ul>
+<li>先执行session_start方法开启session，然后通过全局变量$_SESSION进行session的读写。</li>
+<li>session会自动的对要设置的值进行encode与decode，因此session可以支持任意数据类型，包括数据与对象等。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  session_start();</div><div class="line">  $_SESSION[<span class="string">'test'</span>] = time();</div><div class="line">  var_dump($_SESSION);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="删除与销毁session"><a href="#删除与销毁session" class="headerlink" title="删除与销毁session"></a>删除与销毁session</h5><ul>
+<li>删除某个session值可以使用PHP的unset函数，删除后就会从全局变量$_SESSION中去除，无法访问。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  session_start();</div><div class="line"></div><div class="line">  $_SESSION[<span class="string">'name'</span>] = <span class="string">'jobs'</span>;</div><div class="line"></div><div class="line">  <span class="keyword">unset</span>($_SESSION[<span class="string">'name'</span>]);</div><div class="line"></div><div class="line">  <span class="keyword">echo</span> $_SESSION[<span class="string">'name'</span>]; <span class="comment">//提示name不存在</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>删除所有的session，使用session_destroy，但是seeion_id任然存在。</li>
+<li>session_destroy();并不会立即的销毁全局变量$_SESSION中的值，只有当下次再访问的时候，才会为空，销毁使用 unset 函数。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  session_start();</div><div class="line"></div><div class="line">  $_SESSION[<span class="string">'name'</span>] = <span class="string">'jobs'</span>;</div><div class="line"></div><div class="line">  $_SESSION[<span class="string">'time'</span>] = time();</div><div class="line"></div><div class="line">  session_destroy();  </div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">   session_start();</div><div class="line">   </div><div class="line">   $_SESSION[&apos;name&apos;] = &apos;jobs&apos;;</div><div class="line"></div><div class="line">   $_SESSION[&apos;time&apos;] = time();</div><div class="line"></div><div class="line">   unset($_SESSION);</div><div class="line"></div><div class="line">   session_destroy(); </div><div class="line"> </div><div class="line">   var_dump($_SESSION); //此时已为空</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h4 id="使用session来存储用户的登录信息"><a href="#使用session来存储用户的登录信息" class="headerlink" title="使用session来存储用户的登录信息"></a>使用session来存储用户的登录信息</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  $_SESSION[<span class="string">'uid'</span>] = $userinfo[<span class="string">'uid'</span>];</div><div class="line">  $_SESSION[<span class="string">'userinfo'</span>] = $userinfo;  </div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">session_start();</div><div class="line"><span class="comment">//假设用户登录成功获得了以下用户数据</span></div><div class="line">$userinfo = <span class="keyword">array</span>(</div><div class="line">    <span class="string">'uid'</span>  =&gt; <span class="number">10000</span>,</div><div class="line">    <span class="string">'name'</span> =&gt; <span class="string">'spark'</span>,</div><div class="line">    <span class="string">'email'</span> =&gt; <span class="string">'spark@imooc.com'</span>,</div><div class="line">    <span class="string">'sex'</span>  =&gt; <span class="string">'man'</span>,</div><div class="line">    <span class="string">'age'</span>  =&gt; <span class="string">'18'</span></div><div class="line">);</div><div class="line">header(<span class="string">"content-type:text/html; charset=utf-8"</span>);</div><div class="line"></div><div class="line"><span class="comment">/* 将用户信息保存到session中 */</span></div><div class="line">$_SESSION[<span class="string">'uid'</span>] = $userinfo[<span class="string">'uid'</span>];</div><div class="line">$_SESSION[<span class="string">'name'</span>] = $userinfo[<span class="string">'name'</span>];</div><div class="line">$_SESSION[<span class="string">'userinfo'</span>] = $userinfo;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="将用户信息存储到cookie"><a href="#将用户信息存储到cookie" class="headerlink" title="将用户信息存储到cookie"></a>将用户信息存储到cookie</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">//* 将用户数据保存到cookie中的一个简单方法 */</span></div><div class="line">$secureKey = <span class="string">'imooc'</span>; <span class="comment">//加密密钥</span></div><div class="line">$str = serialize($userinfo); <span class="comment">//将用户信息序列化</span></div><div class="line"><span class="comment">//用户信息加密前</span></div><div class="line">$str = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), $str, MCRYPT_MODE_ECB));</div><div class="line"><span class="comment">//用户信息加密后</span></div><div class="line"><span class="comment">//将加密后的用户数据存储到cookie中</span></div><div class="line">setcookie(<span class="string">'userinfo'</span>, $str);</div><div class="line"></div><div class="line"><span class="comment">//当需要使用时进行解密</span></div><div class="line">$str = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), base64_decode($str), MCRYPT_MODE_ECB);</div><div class="line">$uinfo = unserialize($str);</div><div class="line"><span class="keyword">echo</span> <span class="string">"解密后的用户信息：&lt;br&gt;"</span>;</div><div class="line">print_r($uinfo);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/29/PHP会话控制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-PHP字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/29/PHP字符串/">PHP字符串</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/29/PHP字符串/" class="archive-article-date">
+  	<time datetime="2017-03-29T06:43:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一个字符串，可以通过三种方式来定义："><a href="#一个字符串，可以通过三种方式来定义：" class="headerlink" title="一个字符串，可以通过三种方式来定义："></a>一个字符串，可以通过三种方式来定义：</h5><ol>
+<li><p>单引号</p>
+</li>
+<li><p>双引号</p>
+</li>
+<li><p>heredoc 语法结构</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/29/PHP字符串/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-跨域的解决方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
