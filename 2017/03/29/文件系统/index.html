@@ -6,18 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>跨域的解决方式 | rex博客</title>
+  <title>文件系统 | rex博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js跨域问题">
+  <meta name="description" content="读取文件内容
+file_get_contents (); 可以将整个文件读取到一个字符串中。
+
+123456&amp;lt;?php  $content = file_get_contents(&apos;./test.txt&apos;); //也可以加参数$content = file_get_contents(&apos;./test.txt&apos;, null, null, 100, 500);?&amp;gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域的解决方式">
-<meta property="og:url" content="http://yoursite.com/2017/03/28/跨域的解决方式/index.html">
+<meta property="og:title" content="文件系统">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/文件系统/index.html">
 <meta property="og:site_name" content="rex博客">
-<meta property="og:description" content="js跨域问题">
-<meta property="og:updated_time" content="2017-03-28T10:06:16.379Z">
+<meta property="og:description" content="读取文件内容
+file_get_contents (); 可以将整个文件读取到一个字符串中。
+
+123456&amp;lt;?php  $content = file_get_contents(&apos;./test.txt&apos;); //也可以加参数$content = file_get_contents(&apos;./test.txt&apos;, null, null, 100, 500);?&amp;gt;">
+<meta property="og:updated_time" content="2017-03-29T14:58:20.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域的解决方式">
-<meta name="twitter:description" content="js跨域问题">
+<meta name="twitter:title" content="文件系统">
+<meta name="twitter:description" content="读取文件内容
+file_get_contents (); 可以将整个文件读取到一个字符串中。
+
+123456&amp;lt;?php  $content = file_get_contents(&apos;./test.txt&apos;); //也可以加参数$content = file_get_contents(&apos;./test.txt&apos;, null, null, 100, 500);?&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="rex博客" type="application/atom+xml">
   
@@ -163,28 +172,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-跨域的解决方式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-文件系统" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      跨域的解决方式
+      文件系统
     </h1>
   
 
         
-        <a href="/2017/03/28/跨域的解决方式/" class="archive-article-date">
-  	<time datetime="2017-03-28T10:05:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
+        <a href="/2017/03/29/文件系统/" class="archive-article-date">
+  	<time datetime="2017-03-29T14:27:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="js跨域问题"><a href="#js跨域问题" class="headerlink" title="js跨域问题"></a>js跨域问题</h1><a id="more"></a>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">      <span class="comment">//第一种情况，子域和主域之间的 跨域问题</span></div><div class="line"></div><div class="line">      <span class="comment">//在子域和主域之间都设置一个：</span></div><div class="line"></div><div class="line">      <span class="built_in">document</span>.domain = <span class="string">"主域名的网址"</span></div><div class="line"></div><div class="line">      <span class="comment">//第二种情况，不同域名下，通过服务器代理进行跨域（后台的操作）</span></div><div class="line"></div><div class="line">     <span class="comment">//第三种情况，就是通过 script 标签 进行的跨域，也就是  jsonp  的形式</span></div><div class="line"></div><div class="line">     <span class="comment">//jsonp  就是 json + padding</span></div><div class="line"></div><div class="line">     <span class="comment">//第四种情况，就是使用  location.hash  进行跨域</span></div><div class="line"></div><div class="line"></div><div class="line">     <span class="comment">//第五种情况，使用  Window.name  进行跨域</span></div><div class="line"></div><div class="line">     <span class="comment">//第六种，falsh</span></div><div class="line"></div><div class="line">     <span class="comment">//第七种  html5 的postmessage 方法 </span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+        <h5 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h5><ul>
+<li>file_get_contents (); 可以将整个文件读取到一个字符串中。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  $content = file_get_contents(<span class="string">'./test.txt'</span>);</div><div class="line"></div><div class="line"> <span class="comment">//也可以加参数</span></div><div class="line">$content = file_get_contents(<span class="string">'./test.txt'</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="number">100</span>, <span class="number">500</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="fopen，fgets，fread等方法，fgets可以从文件指针中读取一行，freads可以读取指定长度的字符串。"><a href="#fopen，fgets，fread等方法，fgets可以从文件指针中读取一行，freads可以读取指定长度的字符串。" class="headerlink" title="fopen，fgets，fread等方法，fgets可以从文件指针中读取一行，freads可以读取指定长度的字符串。"></a>fopen，fgets，fread等方法，fgets可以从文件指针中读取一行，freads可以读取指定长度的字符串。</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  $fp = fopen(<span class="string">'./text.txt'</span>, <span class="string">'rb'</span>);</div><div class="line"><span class="keyword">while</span>(!feof($fp)) &#123;</div><div class="line">    <span class="keyword">echo</span> fgets($fp); <span class="comment">//读取一行</span></div><div class="line">&#125;</div><div class="line">fclose($fp);</div><div class="line"><span class="comment">//rb：只有表示只读方式打开，rb表示只读方式打开一个二进制文件</span></div><div class="line"><span class="comment">//feof--测试文件指针是否到了文件结束的位置</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="fread"><a href="#fread" class="headerlink" title="fread"></a>fread</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$fp = fopen(<span class="string">'./text.txt'</span>, <span class="string">'rb'</span>);</div><div class="line">$contents = <span class="string">''</span>;</div><div class="line"><span class="keyword">while</span>(!feof($fp)) &#123;</div><div class="line">    $contents .= fread($fp, <span class="number">4096</span>); <span class="comment">//一次读取4096个字符</span></div></pre></td></tr></table></figure>
+<h5 id="判断文件是否存在"><a href="#判断文件是否存在" class="headerlink" title="判断文件是否存在"></a>判断文件是否存在</h5><ul>
+<li>判断函数：is_file  和  file_exists</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">   $filename = <span class="string">'./test.txt'</span>;</div><div class="line">   <span class="keyword">if</span> (file_exists($filename)) &#123;</div><div class="line">       <span class="keyword">echo</span> file_get_contents($filename);</div><div class="line">   &#125;</div><div class="line"><span class="comment">//如果只是判断文件存在，使用file_exists就行，file_exists不仅可以判断文件是否存在，同时也可以判断目录是否存在，从函数名可以看出，is_file是确切的判断给定的路径是否是一个文件。</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="更加精确的使用方法："><a href="#更加精确的使用方法：" class="headerlink" title="更加精确的使用方法："></a>更加精确的使用方法：</h4><ul>
+<li>is_readable  和  is_writeable </li>
+<li>这个2个函数在文件是否存在的基础上，判断文件是否可读可写。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  $filename = <span class="string">'./test.txt'</span>;</div><div class="line"><span class="keyword">if</span> (is_writeable($filename)) &#123;</div><div class="line">    file_put_contents($filename, <span class="string">'test'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span> (is_readable($filename)) &#123;</div><div class="line">    <span class="keyword">echo</span> file_get_contents($filename);</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="取得文件的修改时间"><a href="#取得文件的修改时间" class="headerlink" title="取得文件的修改时间"></a>取得文件的修改时间</h4><ul>
+<li>文件有很多属性：</li>
+<li>fileowner ： 获得文件的所有者</li>
+<li>filectime： 获取文件的创建时间</li>
+<li>filemtime ：获取文件的修改时间</li>
+<li>fileatime ： 获取文件的访问时间</li>
+</ul>
+<h5 id="获取文件的大小"><a href="#获取文件的大小" class="headerlink" title="获取文件的大小"></a>获取文件的大小</h5><ul>
+<li>通过 filesize 函数可以取得文件的带下，文件大小是以字节表示的</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  $filename = <span class="string">'/data/webroot/usercode/resource/test.txt'</span>;</div><div class="line">$size = filesize($filename);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="如果需要转换文件大小的单位，可以自己定义函数："><a href="#如果需要转换文件大小的单位，可以自己定义函数：" class="headerlink" title="如果需要转换文件大小的单位，可以自己定义函数："></a>如果需要转换文件大小的单位，可以自己定义函数：</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getsize</span><span class="params">($size, $format = <span class="string">'kb'</span>)</span> </span>&#123;</div><div class="line">    $p = <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span> ($format == <span class="string">'kb'</span>) &#123;</div><div class="line">        $p = <span class="number">1</span>;</div><div class="line">    &#125; <span class="keyword">elseif</span> ($format == <span class="string">'mb'</span>) &#123;</div><div class="line">        $p = <span class="number">2</span>;</div><div class="line">    &#125; <span class="keyword">elseif</span> ($format == <span class="string">'gb'</span>) &#123;</div><div class="line">        $p = <span class="number">3</span>;</div><div class="line">    &#125;</div><div class="line">    $size /= pow(<span class="number">1024</span>, $p);</div><div class="line">    <span class="keyword">return</span> number_format($size, <span class="number">3</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$filename = <span class="string">'/data/webroot/usercode/code/resource/test.txt'</span>;</div><div class="line">$size = filesize($filename);</div><div class="line"></div><div class="line">$size = getsize($size, <span class="string">'kb'</span>); <span class="comment">//进行单位转换</span></div><div class="line"><span class="keyword">echo</span> $size.<span class="string">'kb'</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+
       
 
       
@@ -263,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/28/跨域的解决方式/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/29/文件系统/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +313,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/03/29/PHP字符串/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/03/29/数据库操作/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          PHP字符串
+          数据库操作
         
       </div>
     </a>
   
   
-    <a href="/2017/03/28/面向对象-继承/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面向对象--继承</div>
+    <a href="/2017/03/29/PHP会话控制/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP会话控制</div>
       <i class="icon-circle-right"></i>
     </a>
   

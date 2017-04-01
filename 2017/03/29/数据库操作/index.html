@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>跨域的解决方式 | rex博客</title>
+  <title>数据库操作 | rex博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js跨域问题">
+  <meta name="description" content="php支持哪些数据库1234567PHP通过安装相应的扩展来实现数据库操作，现代应用程序的设计离不开数据库的应用，当前主流的数据库有MsSQL，MySQL，Sybase，Db2，Oracle，PostgreSQL，Access等，这些数据库PHP都能够安装扩展来支持
+123&amp;lt;?php   //一般情况下常说的LAMP架构指的是：Linux、Apache、Mysql、PHP，因此Mysql数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域的解决方式">
-<meta property="og:url" content="http://yoursite.com/2017/03/28/跨域的解决方式/index.html">
+<meta property="og:title" content="数据库操作">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/数据库操作/index.html">
 <meta property="og:site_name" content="rex博客">
-<meta property="og:description" content="js跨域问题">
-<meta property="og:updated_time" content="2017-03-28T10:06:16.379Z">
+<meta property="og:description" content="php支持哪些数据库1234567PHP通过安装相应的扩展来实现数据库操作，现代应用程序的设计离不开数据库的应用，当前主流的数据库有MsSQL，MySQL，Sybase，Db2，Oracle，PostgreSQL，Access等，这些数据库PHP都能够安装扩展来支持
+123&amp;lt;?php   //一般情况下常说的LAMP架构指的是：Linux、Apache、Mysql、PHP，因此Mysql数据">
+<meta property="og:updated_time" content="2017-03-29T15:01:50.977Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域的解决方式">
-<meta name="twitter:description" content="js跨域问题">
+<meta name="twitter:title" content="数据库操作">
+<meta name="twitter:description" content="php支持哪些数据库1234567PHP通过安装相应的扩展来实现数据库操作，现代应用程序的设计离不开数据库的应用，当前主流的数据库有MsSQL，MySQL，Sybase，Db2，Oracle，PostgreSQL，Access等，这些数据库PHP都能够安装扩展来支持
+123&amp;lt;?php   //一般情况下常说的LAMP架构指的是：Linux、Apache、Mysql、PHP，因此Mysql数据">
   
     <link rel="alternative" href="/atom.xml" title="rex博客" type="application/atom+xml">
   
@@ -163,28 +166,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-跨域的解决方式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据库操作" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      跨域的解决方式
+      数据库操作
     </h1>
   
 
         
-        <a href="/2017/03/28/跨域的解决方式/" class="archive-article-date">
-  	<time datetime="2017-03-28T10:05:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
+        <a href="/2017/03/29/数据库操作/" class="archive-article-date">
+  	<time datetime="2017-03-29T14:57:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="js跨域问题"><a href="#js跨域问题" class="headerlink" title="js跨域问题"></a>js跨域问题</h1><a id="more"></a>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">      <span class="comment">//第一种情况，子域和主域之间的 跨域问题</span></div><div class="line"></div><div class="line">      <span class="comment">//在子域和主域之间都设置一个：</span></div><div class="line"></div><div class="line">      <span class="built_in">document</span>.domain = <span class="string">"主域名的网址"</span></div><div class="line"></div><div class="line">      <span class="comment">//第二种情况，不同域名下，通过服务器代理进行跨域（后台的操作）</span></div><div class="line"></div><div class="line">     <span class="comment">//第三种情况，就是通过 script 标签 进行的跨域，也就是  jsonp  的形式</span></div><div class="line"></div><div class="line">     <span class="comment">//jsonp  就是 json + padding</span></div><div class="line"></div><div class="line">     <span class="comment">//第四种情况，就是使用  location.hash  进行跨域</span></div><div class="line"></div><div class="line"></div><div class="line">     <span class="comment">//第五种情况，使用  Window.name  进行跨域</span></div><div class="line"></div><div class="line">     <span class="comment">//第六种，falsh</span></div><div class="line"></div><div class="line">     <span class="comment">//第七种  html5 的postmessage 方法 </span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+        <h5 id="php支持哪些数据库"><a href="#php支持哪些数据库" class="headerlink" title="php支持哪些数据库"></a>php支持哪些数据库</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PHP通过安装相应的扩展来实现数据库操作，</div><div class="line"></div><div class="line">现代应用程序的设计离不开数据库的应用，当前主流的数据库有</div><div class="line"></div><div class="line">MsSQL，MySQL，Sybase，Db2，Oracle，PostgreSQL，Access等，</div><div class="line"></div><div class="line">这些数据库PHP都能够安装扩展来支持</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">   <span class="comment">//一般情况下常说的LAMP架构指的是：Linux、Apache、Mysql、PHP，因此Mysql数据库在PHP中的应用非常广泛，我们会在本章中简单的了解Mysql的操作方法。  </span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+
       
 
       
@@ -263,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/28/跨域的解决方式/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/29/数据库操作/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +281,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/03/29/PHP字符串/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          PHP字符串
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/28/面向对象-继承/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面向对象--继承</div>
+    <a href="/2017/03/29/文件系统/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">文件系统</div>
       <i class="icon-circle-right"></i>
     </a>
   
